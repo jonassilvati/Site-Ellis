@@ -14,11 +14,11 @@
             authorLegend: 'Sócia'
         },
         {
-            img: 'images/testimonials/sense-page-1.jpg',
+            img: '/images/testimonials/sense-page-1.jpg',
             arrowColor: '#2E3D46'
         },
         {
-            img: 'images/testimonials/sense-page-2.jpg',
+            img: '/images/testimonials/sense-page-2.jpg',
             arrowColor: '#2E3D46'
         }
     ];
@@ -32,10 +32,10 @@
             authorLegend: 'CEO'
         },
         {
-            img: 'images/testimonials/lirion-page-1.jpg',
+            img: '/images/testimonials/lirion-page-1.jpg',
         },
         {
-            img: 'images/testimonials/lirion-page-2.jpg',
+            img: '/images/testimonials/lirion-page-2.jpg',
         }
     ];
 </script>

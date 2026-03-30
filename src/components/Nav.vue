@@ -179,7 +179,7 @@
         display: block;
         width: 40px;
         height: 40px;
-        background: url('images/menu-bar.svg') no-repeat center center / 35px 35px;
+        background: url('/images/menu-bar.svg') no-repeat center center / 35px 35px;
         border: none;
     }
     
@@ -187,7 +187,7 @@
         display: block;
         width: 40px;
         height: 40px;
-        background: url('images/close.svg') no-repeat center center / 25px 25px;
+        background: url('/images/close.svg') no-repeat center center / 25px 25px;
         border: none;
     }
 </style>

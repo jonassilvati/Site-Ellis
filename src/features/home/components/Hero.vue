@@ -14,13 +14,13 @@
 
 <style lang="scss">
     .home-hero{
-        background: url(images/bg-home-hero.jpg) no-repeat bottom right / cover;
+        background: url(/images/bg-home-hero.jpg) no-repeat bottom right / cover;
         padding-top: 109px;        
         transition: background .3s linear;
         min-height: 70vh;
         
         @media (min-width: 991px){
-            background: url(images/bg-home-hero.jpg) no-repeat top left / cover;
+            background: url(/images/bg-home-hero.jpg) no-repeat top left / cover;
             transition: background .3s linear;
             height: 100vh;
         }

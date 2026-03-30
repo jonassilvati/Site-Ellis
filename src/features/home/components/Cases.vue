@@ -21,16 +21,16 @@
             </div>
             <div class="cases-grid">
                 <div class="cases-grid__col">
-                    <CaseCard img="images/sense-thumb.png" title="Sense" variation="tall"/>
-                    <CaseCard img="images/boomplay-thumb.png" title="Boomplay" variation="short"/>
+                    <CaseCard img="/images/sense-thumb.png" title="Sense" variation="tall"/>
+                    <CaseCard img="/images/boomplay-thumb.png" title="Boomplay" variation="short"/>
                 </div>
                 <div class="cases-grid__col">
-                    <CaseCard img="images/thielen-thumb.png" title="Thielen Taveira" variation="short"/>
-                    <CaseCard img="images/arcoiris-thumb.png" title="Escola Arco-íris" variation="tall"/>
+                    <CaseCard img="/images/thielen-thumb.png" title="Thielen Taveira" variation="short"/>
+                    <CaseCard img="/images/arcoiris-thumb.png" title="Escola Arco-íris" variation="tall"/>
                 </div>
                 <div class="cases-grid__col">
-                    <CaseCard img="images/baru-thumb.png" title="Baru" variation="tall"/>
-                    <CaseCard img="images/dionilo-costa-thumb.jpg" title="Dionilo Costa" variation="short"/>
+                    <CaseCard img="/images/baru-thumb.png" title="Baru" variation="tall"/>
+                    <CaseCard img="/images/dionilo-costa-thumb.jpg" title="Dionilo Costa" variation="short"/>
                 </div>
             </div>
             <div class="d-flex justify-content-center">
