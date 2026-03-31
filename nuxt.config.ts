@@ -8,6 +8,11 @@ export default defineNuxtConfig({
 
   app: {
     head: {
+      title: 'Ellis Studio & Co.',
+      meta: [
+        { name: 'description', content: 'Ellis Studio & Co. é uma agência de design e desenvolvimento que cria experiências únicas e impactantes para seus clientes.' },
+        { name: 'keywords', content: 'Ellis Studio & Co., design, desenvolvimento, experiência, impacto, clientes, branding, design gráfico, design de identidade visual, design de logotipo, design de website, design de aplicativo, design de marketing, design de publicidade, design de propaganda, design de identidade visual, design de logotipo, design de website, design de aplicativo, design de marketing, design de publicidade, design de propaganda' },
+      ],
       link: [
         { rel: 'stylesheet', href: '/fontawesome/all.min.css' },
         { rel: 'stylesheet', href: '/fontawesome/sharp-regular.min.css' }
