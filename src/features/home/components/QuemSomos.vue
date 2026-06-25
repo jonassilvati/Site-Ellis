@@ -72,6 +72,8 @@
             aspect-ratio: 16 / 9;
             max-height: 642px;
             overflow: hidden;
+            border-radius: 20px;
+            overflow: hidden;
 
             video{
                 width: 100%;
