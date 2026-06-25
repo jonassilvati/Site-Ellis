@@ -5,9 +5,15 @@
     const emit = defineEmits(['offcanvas-change']);
 
     const menuOffcanvasRef = ref(null);
+    const menuToggleRef = ref(null);
 
     const setOffcanvasOpen = (open) => {
         emit('offcanvas-change', open);
+    };
+
+    const setOffcanvasA11y = (open) => {
+        menuOffcanvasRef.value?.setAttribute('aria-hidden', open ? 'false' : 'true');
+        menuToggleRef.value?.setAttribute('aria-expanded', open ? 'true' : 'false');
     };
 
     const lockBodyScroll = () => {
@@ -41,12 +47,14 @@
 
     const openMenuOffcanvas = () => {
         menuOffcanvasRef.value?.classList.add('active');
+        setOffcanvasA11y(true);
         lockBodyScroll();
         setOffcanvasOpen(true);
     }
 
     const closeMenuOffcanvas = () => {
         menuOffcanvasRef.value?.classList.remove('active');
+        setOffcanvasA11y(false);
         unlockBodyScroll();
         setOffcanvasOpen(false);
     }
@@ -54,6 +62,7 @@
     const cbAfterOpenMenuOffcanvas = () => {
         setTimeout(() => {
             menuOffcanvasRef.value?.classList.remove('active');
+            setOffcanvasA11y(false);
             unlockBodyScroll();
             setOffcanvasOpen(false);
         }, 100);
@@ -71,12 +80,31 @@
             <li v-for="item in menuItems" :key="item.title"><a :href="item.href" @click="cbAfterOpenMenuOffcanvas()">{{ item.title }}</a></li>
             <li><Button v-on:click="openModal()">Solicite uma proposta</Button></li>
         </ul>
-        <button v-on:click="openMenuOffcanvas()" class="menu-mobile-toggle open d-block d-lg-none"></button>
+        <button
+            ref="menuToggleRef"
+            type="button"
+            v-on:click="openMenuOffcanvas()"
+            class="menu-mobile-toggle open d-block d-lg-none"
+            aria-label="Abrir menu"
+            aria-expanded="false"
+            aria-controls="menu-offcanvas"
+        ></button>
     </nav>
-    <div ref="menuOffcanvasRef" class="menu-offcanvas">
+    <nav
+        id="menu-offcanvas"
+        ref="menuOffcanvasRef"
+        class="menu-offcanvas"
+        aria-label="Menu mobile"
+        aria-hidden="true"
+    >
         <div class="d-flex align-items-center justify-content-between menu-offcanvas__header">
-            <h4>Menu</h4>
-            <button v-on:click="closeMenuOffcanvas()" class="menu-mobile-toggle close d-block d-lg-none"></button>
+            <p class="menu-offcanvas__title">Menu</p>
+            <button
+                type="button"
+                v-on:click="closeMenuOffcanvas()"
+                class="menu-mobile-toggle close d-block d-lg-none"
+                aria-label="Fechar menu"
+            ></button>
         </div>
         <div class="d-flex align-items-start justify-content-start" style="gap: 40px;">
             <ul class="">
@@ -84,7 +112,7 @@
                 <li><Button v-on:click="openModal()">Solicite uma proposta</Button></li>
             </ul>            
         </div>
-    </div>
+    </nav>
 </template>
 
 <style lang="scss" scoped>
@@ -104,8 +132,10 @@
         overflow: hidden;
         pointer-events: none;
 
-        h4{
+        &__title{
+            margin: 0;
             font-size: 1.8rem;
+            font-weight: 400;
         }
         
         &.active{

@@ -16,7 +16,7 @@
                     <SectionTitle>Cases</SectionTitle>
                 </div>
                 <div class="col-12 col-md-10">
-                    <h2>Conheça as histórias por trás dos projetos que ajudamos a moldar.</h2>
+                    <h3>Conheça as histórias por trás dos projetos que ajudamos a moldar.</h3>
                 </div>
             </div>
             <div class="cases-grid">
@@ -45,7 +45,7 @@
         padding-top: 70px;
         padding-bottom: 136px;
 
-        h2{
+        h3{
             color: #2E3D46;
             font-family: Sora;
             font-size: 2rem;

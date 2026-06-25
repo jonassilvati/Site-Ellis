@@ -12,13 +12,13 @@
 
 <template>
     <div class="section-title-wrapper" :class="`variant-${props.variant}`" @mouseleave="hover = false" @mouseenter="hover = true">
-        <span v-show="hover">
+        <span v-show="hover" aria-hidden="true">
             <i class="fa-sharp fa-regular fa-arrow-up-right"></i>
         </span>
-        <span v-show="!hover">
+        <span v-show="!hover" aria-hidden="true">
             <i class="fa-sharp fa-regular fa-arrow-down-right"></i>
         </span>
-        <h4><slot/></h4>
+        <h2 class="section-title"><slot/></h2>
     </div>
 </template>
 
@@ -39,7 +39,8 @@
                 color: #2E3D46;
             }
 
-            h4{
+            h2.section-title,
+            .section-title{
                 color: #2E3D46;
             }
         }
@@ -50,13 +51,15 @@
                 fill: #fff;
             }
 
-            h4{
+            h2.section-title,
+            .section-title{
                 color: #fff;
             }
         }
 
 
-        h4{
+        h2.section-title,
+        .section-title{
             font-family: Sora;
             font-style: normal;
             font-weight: 400;

@@ -13,7 +13,7 @@
             </div>
             <div class="row align-items-center justify-content-between" style="margin-bottom: 60px;">
                 <div class="col-12 col-md-5">
-                    <h2>Somos um estúdio criativo que faz design com propósito.</h2>
+                    <h3>Somos um estúdio criativo que faz design com propósito.</h3>
                 </div>
                 <div class="col-12 col-md-4">
                     <p>Projetamos experiências visuais e funcionais que impactam, transformam e conectam</p>
@@ -25,6 +25,7 @@
                     muted
                     loop
                     controls
+                    title="Vídeo institucional da Ellis Studio"
                     src="https://res.cloudinary.com/dvctq5ba9/video/upload/v1774880806/VIDEO_INSTITUCIONAL_ELLIS_STUDIO_Final_jq2v0h.mp4"
                     preload="metadata"
                 ></video>
@@ -40,7 +41,7 @@
         padding-bottom: 99px;
         
 
-        h2{
+        h3{
             color: #2E3D46;
             font-family: Sora;
             font-size: 2rem;

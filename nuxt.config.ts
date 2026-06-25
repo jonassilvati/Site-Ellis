@@ -11,6 +11,9 @@ export default defineNuxtConfig({
 
   app: {
     head: {
+      htmlAttrs: {
+        lang: 'pt-BR',
+      },
       title: 'Ellis Studio & Co.',
       meta: [
         { name: 'description', content: 'Ellis Studio & Co. é uma agência de design e desenvolvimento que cria experiências únicas e impactantes para seus clientes.' },

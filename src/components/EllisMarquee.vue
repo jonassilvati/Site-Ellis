@@ -1,8 +1,9 @@
 <script setup></script>
 
 <template>
-    <section class="ellis-marquee">
-        <div class="ellis-marquee__viewport" aria-label="Mensagem em rolagem">
+    <section class="ellis-marquee" aria-label="Mensagem em rolagem">
+        <p class="visually-hidden">Design é o ponto de encontro entre função, forma e significado.</p>
+        <div class="ellis-marquee__viewport" aria-hidden="true">
             <div class="ellis-marquee__track">
                 <div class="ellis-marquee__content" aria-hidden="true">
                     <span class="ellis-marquee__item">

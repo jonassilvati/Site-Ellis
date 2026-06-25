@@ -8,15 +8,15 @@
                 <div class="row justify-content-center justify-content-lg-start align-items-start" style="gap: var(--gap-horizontal);">
                     <div class="col-auto">
                         <div class="social-links">
-                            <a href="https://www.instagram.com/ellisstudiobr/"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="https://www.behance.net/ellisstudiobr"><i class="fa-brands fa-behance"></i></a>
-                            <a href="https://www.linkedin.com/company/ellisstudiobr/"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="https://www.instagram.com/ellisstudiobr/" aria-label="Instagram da Ellis Studio" rel="noopener noreferrer" target="_blank"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+                            <a href="https://www.behance.net/ellisstudiobr" aria-label="Behance da Ellis Studio" rel="noopener noreferrer" target="_blank"><i class="fa-brands fa-behance" aria-hidden="true"></i></a>
+                            <a href="https://www.linkedin.com/company/ellisstudiobr/" aria-label="LinkedIn da Ellis Studio" rel="noopener noreferrer" target="_blank"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a>
                         </div>
                     </div>
 
                     <div class="col-auto">
                         <div class="d-flex flex-column align-items-start" style="gap: var(--gap-vertical);">
-                            <span class="copyright"><i class="fa-regular fa-copyright"></i> {{ new Date().getFullYear() }}. Éllis Studio & Co.</span>
+                            <span class="copyright"><i class="fa-regular fa-copyright" aria-hidden="true"></i> {{ new Date().getFullYear() }}. Éllis Studio & Co.</span>
                             <span class="copyright">Todos os Direitos Reservados.</span>
                         </div>
                     </div>

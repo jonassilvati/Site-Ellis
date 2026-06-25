@@ -36,8 +36,10 @@
             <Accordion>
                 <AccordionItem v-for="item in accordionItems">
                     <template #title>
-                        <i :class="item.icon"></i>
-                        {{ item.title }}
+                        <h3 class="accordion-item__title">
+                            <i :class="item.icon" aria-hidden="true"></i>
+                            {{ item.title }}
+                        </h3>
                     </template>
                     <template #default>
                         {{ item.body }}

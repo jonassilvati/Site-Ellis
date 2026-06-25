@@ -9,7 +9,7 @@
 <template>
     <button class="ellis-button" :class="`variation-${props.variation || 'button'}`" @click="props.onClick">
         <slot/>
-        <span v-show="!props.noIcon"><i class="fa-solid fa-arrow-right-long"></i></span>
+        <span v-show="!props.noIcon" aria-hidden="true"><i class="fa-solid fa-arrow-right-long"></i></span>
     </button>
 </template>
 

@@ -22,7 +22,7 @@
 
 <template>
     <article :class="`case-card style-${props.variation}`">
-        <PictureImage :src="props.img" :alt="props.alt" />
+        <PictureImage :src="props.img" :alt="props.alt || props.title" />
         <span class="case-card__title">{{ props.title }}</span>
     </article>
 </template>

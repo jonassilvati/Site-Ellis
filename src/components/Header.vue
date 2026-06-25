@@ -50,10 +50,10 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-9 col-md-3">
-                    <a href="">
+                    <a href="/" aria-label="Ellis Studio & Co. — Página inicial">
                         <div class="logo-wrapper">
-                            <Logo class="logo logo-black"/>
-                            <LogoColor class="logo logo-color"/>
+                            <Logo class="logo logo-black" aria-hidden="true"/>
+                            <LogoColor class="logo logo-color" aria-hidden="true"/>
                         </div>
                     </a>
                 </div>
