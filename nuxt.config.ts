@@ -4,7 +4,10 @@ import svgLoader from 'vite-svg-loader'
 
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
-  devtools: { enabled: true },
+
+  $development: {
+    devtools: { enabled: true },
+  },
 
   app: {
     head: {
@@ -14,12 +17,7 @@ export default defineNuxtConfig({
         { name: 'keywords', content: 'Ellis Studio & Co., design, desenvolvimento, experiência, impacto, clientes, branding, design gráfico, design de identidade visual, design de logotipo, design de website, design de aplicativo, design de marketing, design de publicidade, design de propaganda, design de identidade visual, design de logotipo, design de website, design de aplicativo, design de marketing, design de publicidade, design de propaganda' },
       ],
       link: [
-        { rel: 'stylesheet', href: '/fontawesome/all.min.css' },
-        { rel: 'stylesheet', href: '/fontawesome/sharp-regular.min.css' }
-      ],
-      script: [
-        { src: '/fontawesome/all.min.js', defer: true },
-        { src: '/fontawesome/sharp-regular.min.js', defer: true }
+        { rel: 'stylesheet', href: '/fontawesome/icons-subset.css' },
       ],
     },
   },
@@ -32,7 +30,8 @@ export default defineNuxtConfig({
 
   css: [
     '@/assets/styles/main.scss',
-    'bootstrap/dist/css/bootstrap.min.css'
+    'bootstrap/dist/css/bootstrap-grid.min.css',
+    'bootstrap/dist/css/bootstrap-utilities.min.css',
   ],
 
   vite: {
@@ -47,7 +46,13 @@ export default defineNuxtConfig({
       },
       display: 'swap'
     }
-  ], 'nuxt-swiper'],
+  ]],
+
+  routeRules: {
+    '/images/**': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } },
+    '/webfonts/**': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } },
+    '/fontawesome/**': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } },
+  },
   devServer: {
     host: '0.0.0.0' // Garante que o servidor escute em todas as interfaces
   }

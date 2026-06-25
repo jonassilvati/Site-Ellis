@@ -100,6 +100,9 @@
         background-color: #fff;
         transition: right .3s linear;
         z-index: 1000;
+        box-sizing: border-box;
+        overflow: hidden;
+        pointer-events: none;
 
         h4{
             font-size: 1.8rem;
@@ -108,6 +111,7 @@
         &.active{
             right: 0;
             transition: right .3s linear;
+            pointer-events: auto;
         }
 
         ul{

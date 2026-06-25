@@ -1,8 +1,22 @@
-html{
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
     overflow-x: hidden;
     font-size: 14px;
 
-    @media (min-width: 1920px){
+    @media (min-width: 1920px) {
         font-size: 16px;
     }
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    font-family: 'Sora', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }

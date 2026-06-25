@@ -1,3 +1,17 @@
+<script setup lang="ts">
+    useHead({
+        link: [
+            {
+                rel: 'preload',
+                as: 'image',
+                href: '/images/bg-home-hero.avif',
+                type: 'image/avif',
+                fetchpriority: 'high',
+            },
+        ],
+    });
+</script>
+
 <template>
     <section id="begin-section" class="home-hero d-flex">
         <div class="container">
@@ -14,14 +28,16 @@
 
 <style lang="scss">
     .home-hero{
-        background: url(/images/bg-home-hero.jpg) no-repeat bottom right / cover;
-        padding-top: 109px;        
+        background-image: url(/images/bg-home-hero.avif);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: bottom right;
+        padding-top: 109px;
         transition: background .3s linear;
         min-height: 70vh;
         
         @media (min-width: 991px){
-            background: url(/images/bg-home-hero.jpg) no-repeat top left / cover;
-            transition: background .3s linear;
+            background-position: top left;
             height: 100vh;
         }
 
