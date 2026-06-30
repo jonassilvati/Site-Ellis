@@ -16,11 +16,11 @@ function str(v: unknown): string {
 export default defineEventHandler(async (event) => {
   const body = await readBody<Record<string, any>>(event)
 
-  // Gating: a promoção é para clientes atuais com CNPJ ativo
-  if (body?.cnpjAtivo !== true || body?.jaContratou !== true) {
+  // Gating: CNPJ ativo e nunca foi cliente da Éllis
+  if (body?.cnpjAtivo !== true || body?.jaContratou !== false) {
     throw createError({
       statusCode: 422,
-      statusMessage: 'A promoção é exclusiva para clientes atuais com CNPJ ativo.',
+      statusMessage: 'O projeto é destinado a marcas com CNPJ ativo que ainda não foram clientes da Éllis Studio & Co.',
     })
   }
 
@@ -76,7 +76,7 @@ export default defineEventHandler(async (event) => {
     responsavelTelefone,
     cnpj,
     cnpjAtivo: true,
-    jaContratou: true,
+    jaContratou: false,
     mudancas: Array.isArray(body.mudancas) ? body.mudancas.map(str).filter(Boolean) : [],
     mudancasOutro: str(body.mudancasOutro),
     problemaAtual,

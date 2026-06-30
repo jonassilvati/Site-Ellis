@@ -55,7 +55,8 @@ const form = reactive({
   lgpd: { tratamentoDados: false, infoVerdadeiras: false },
 })
 
-const naoElegivel = computed(() => form.cnpjAtivo === false || form.jaContratou === false)
+// elegível: CNPJ ativo E nunca foi cliente da Éllis
+const naoElegivel = computed(() => form.cnpjAtivo === false || form.jaContratou === true)
 
 const step1Valido = computed(() =>
   form.empresaNome.trim() &&
@@ -64,7 +65,7 @@ const step1Valido = computed(() =>
   form.responsavelTelefone.trim() &&
   form.cnpj.trim() &&
   form.cnpjAtivo === true &&
-  form.jaContratou === true,
+  form.jaContratou === false,
 )
 
 const step2Valido = computed(() =>
@@ -131,7 +132,23 @@ async function submit() {
         <header class="rebrand-head">
           <p class="eyebrow">Projeto de Rebranding · Éllis Studio &amp; Co.</p>
           <h1>Formulário de inscrição</h1>
-          <p class="lead">Uma iniciativa exclusiva para marcas que já caminharam com a gente e estão prontas para o próximo capítulo.</p>
+          <p class="lead">
+            O Projeto de Rebranding Éllis Studio selecionará um número limitado de marcas para participar de um processo completo de reposicionamento estratégico e renovação de identidade visual, conduzido pela equipe da Éllis Studio &amp; Co.
+          </p>
+          <p class="lead">
+            A participação é gratuita para as marcas selecionadas e tem como objetivo desenvolver cases reais de transformação de marca, documentando o processo e seus resultados.
+          </p>
+          <div class="criterios">
+            <p class="criterios-title">Critérios de elegibilidade:</p>
+            <ul>
+              <li>Possuir marca ativa e em operação;</li>
+              <li>Possuir CNPJ ativo;</li>
+              <li>Não ter sido cliente da Éllis Studio &amp; Co. anteriormente;</li>
+              <li>Estar disponível para participar das etapas do projeto;</li>
+              <li>Autorizar a divulgação do processo e dos resultados como estudo de caso da Éllis Studio &amp; Co.</li>
+            </ul>
+          </div>
+          <p class="disclaimer">O preenchimento deste formulário não garante a seleção da marca.</p>
         </header>
 
         <!-- Progresso -->
@@ -170,15 +187,14 @@ async function submit() {
             <label><input type="radio" :value="false" v-model="form.cnpjAtivo" /> Não</label>
           </fieldset>
           <fieldset class="yn">
-            <legend>A empresa já contratou a Éllis Studio antes? *</legend>
+            <legend>A empresa já foi cliente da Éllis Studio &amp; Co. anteriormente? *</legend>
             <label><input type="radio" :value="true" v-model="form.jaContratou" /> Sim</label>
             <label><input type="radio" :value="false" v-model="form.jaContratou" /> Não</label>
           </fieldset>
 
           <p v-if="naoElegivel" class="block-msg">
-            Esta promoção de rebranding é exclusiva para <strong>clientes atuais da Éllis Studio com CNPJ ativo</strong>.
-            Se acredita que houve um engano ou quer conhecer outros serviços, fale com a gente pelo
-            <a href="/">site</a>.
+            Este projeto é destinado a marcas que <strong>ainda não foram clientes da Éllis Studio &amp; Co.</strong> e que possuam CNPJ ativo.
+            Se quiser conhecer nossos serviços, acesse o nosso <a href="/">site</a>.
           </p>
 
           <div class="actions">
@@ -309,8 +325,18 @@ async function submit() {
   max-width: 640px;
   margin: 0 auto 32px;
   .eyebrow { color: #5c6fec; font-size: 0.85rem; letter-spacing: 0.04em; text-transform: uppercase; margin: 0 0 8px; }
-  h1 { margin: 0 0 12px; font-size: 2rem; color: #2b333b; }
-  .lead { color: #54636e; margin: 0; }
+  h1 { margin: 0 0 16px; font-size: 2rem; color: #2b333b; }
+  .lead { color: #54636e; margin: 0 0 12px; line-height: 1.7; }
+}
+.criterios {
+  max-width: 640px; margin: 16px auto 0; text-align: left;
+  background: #fff; border: 1px solid #e9ecf2; border-radius: 12px; padding: 20px 24px;
+  .criterios-title { font-weight: 600; color: #2b333b; margin: 0 0 10px; font-size: 0.92rem; }
+  ul { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 6px; }
+  li { color: #54636e; font-size: 0.9rem; line-height: 1.5; }
+}
+.disclaimer {
+  max-width: 640px; margin: 12px auto 0; color: #a6adb8; font-size: 0.82rem; text-align: center;
 }
 .steps {
   display: flex; gap: 8px; max-width: 640px; margin: 0 auto 24px; padding: 0; list-style: none; counter-reset: s;
