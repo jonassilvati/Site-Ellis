@@ -133,10 +133,7 @@ async function submit() {
           <p class="eyebrow">Projeto de Rebranding · Éllis Studio &amp; Co.</p>
           <h1>Formulário de inscrição</h1>
           <p class="lead">
-            O Projeto de Rebranding Éllis Studio selecionará um número limitado de marcas para participar de um processo completo de reposicionamento estratégico e renovação de identidade visual, conduzido pela equipe da Éllis Studio &amp; Co.
-          </p>
-          <p class="lead">
-            A participação é gratuita para as marcas selecionadas e tem como objetivo desenvolver cases reais de transformação de marca, documentando o processo e seus resultados.
+            O Projeto de Rebranding Éllis Studio selecionará uma marca por semestre para participar de um processo completo de reposicionamento estratégico e renovação de identidade visual, conduzido pela equipe da Éllis Studio & Co.  
           </p>
           <div class="criterios">
             <p class="criterios-title">Critérios de elegibilidade:</p>
