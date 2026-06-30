@@ -24,7 +24,7 @@
                     <div class="col-auto">
                         <div class="d-flex flex-column align-items-start" style="gap: var(--gap-vertical);">
                             <span class="txt">Agende uma call</span>
-                            <a href="mailto:ola@ellisstudio.com.br">ola@ellisstudio.com.br</a>
+                            <a href="mailto:contato@ellisstudio.com.br">contato@ellisstudio.com.br</a>
                         </div>
                     </div>
 
