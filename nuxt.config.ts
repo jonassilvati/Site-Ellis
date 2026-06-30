@@ -41,15 +41,25 @@ export default defineNuxtConfig({
     plugins: [svgLoader()]
   },
 
-  modules: [[
-    '@nuxtjs/google-fonts', 
-    {
-      families: {
-        Sora: '300..600'
-      },
-      display: 'swap'
-    }
-  ]],
+  modules: [
+    'nuxt-auth-utils',
+    [
+      '@nuxtjs/google-fonts',
+      {
+        families: {
+          Sora: '300..600'
+        },
+        display: 'swap'
+      }
+    ]
+  ],
+
+  runtimeConfig: {
+    mongodbUri: '',
+    mongodbDb: 'ellis',
+    adminEmail: '',
+    adminPassword: '',
+  },
 
   routeRules: {
     '/images/**': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } },

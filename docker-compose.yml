@@ -1,0 +1,38 @@
+services:
+  mongo:
+    image: mongo:7
+    container_name: ellis-mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USER:-ellis}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD:-troque-esta-senha}
+      MONGO_INITDB_DATABASE: ${MONGO_DB:-ellis}
+    volumes:
+      - mongo-data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # GUI opcional para visualizar o banco em http://localhost:8081
+  # Suba apenas quando precisar:  docker compose --profile gui up -d
+  mongo-express:
+    image: mongo-express:1.0.2
+    container_name: ellis-mongo-express
+    restart: unless-stopped
+    profiles: ["gui"]
+    depends_on:
+      mongo:
+        condition: service_healthy
+    ports:
+      - "8081:8081"
+    environment:
+      ME_CONFIG_MONGODB_URL: mongodb://${MONGO_USER:-ellis}:${MONGO_PASSWORD:-troque-esta-senha}@mongo:27017/?authSource=admin
+      ME_CONFIG_BASICAUTH_USERNAME: ${MONGO_USER:-ellis}
+      ME_CONFIG_BASICAUTH_PASSWORD: ${MONGO_PASSWORD:-troque-esta-senha}
+
+volumes:
+  mongo-data:
